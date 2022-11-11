@@ -1,2 +1,3 @@
-# sicas-workflows
-Repo containing workflows for SICAS java projects
+# SICAS Github Actions
+
+All GitHub Actions used for SICAS processes.
