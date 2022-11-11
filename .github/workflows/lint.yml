@@ -1,9 +1,7 @@
 name: Lint
 on:
-  push:
-    branches:
-      - master
-  pull_request:
+  workflow_call
+  
 jobs:
   lint:
     name: Lint Code Base
