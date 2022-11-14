@@ -1,0 +1,27 @@
+name: Label Manager
+
+on:
+  workflow_call:
+    inputs:
+      labels_file:
+        required: true
+        type: string
+      delete_missing:
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Synchronize labels
+        uses: julbme/gh-action-manage-label@v1
+        with:
+          from: ${{ inputs.labels_file }}
+          skip_delete: ${{ inputs.delete_missing }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
