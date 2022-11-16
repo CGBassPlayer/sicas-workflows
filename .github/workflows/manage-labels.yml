@@ -22,6 +22,6 @@ jobs:
         uses: julbme/gh-action-manage-label@v1
         with:
           from: ${{ inputs.labels_file }}
-          skip_delete: ${{ inputs.delete_missing }}
+          skip_delete: ${{ !inputs.delete_missing }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
